@@ -3,7 +3,7 @@ import { DetailedPokemon } from '@/types';
 import { useState } from 'react';
 import { DetailedPokemonCard, MultiSelect, PokemonCard } from '.';
 import { Button } from './ui/button';
-// import { Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 
 export const Layout = (): JSX.Element => {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
@@ -69,7 +69,7 @@ export const Layout = (): JSX.Element => {
         </ul>
         {pokemonData?.next && (
           <Button className='mt-6' onClick={loadMore} disabled={isPokemonDataLoading}>
-            {/* {isPokemonDataLoading && <Loader2 className='mr-2 h-4 w-4 animate-spin' />} */}
+            {isPokemonDataLoading && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
             Load more
           </Button>
         )}
